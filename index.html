@@ -3,1195 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Mesa de Natal Encantadora | R$ 19,90</title>
-
-  <meta name="description"
-    content="Aprenda a montar uma mesa de Natal bonita, acolhedora e possível de fazer em casa, mesmo gastando pouco.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --vermelho: #8f2430;
-      --vermelho-escuro: #651923;
-      --creme: #fbf7ef;
-      --texto: #302925;
-      --cinza: #756a61;
-      --dourado: #c79b4a;
-      --linha: #e7ddcf;
-      --branco: #ffffff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--texto);
-      background: var(--creme);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* TOPO */
-
-    .topbar {
-      height: 65px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      background: rgba(255,255,255,0.97);
-      border-bottom: 1px solid var(--linha);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      font-weight: bold;
-      color: var(--vermelho);
-    }
-
-    .logo span {
-      color: var(--texto);
-    }
-
-    .top-button {
-      color: var(--vermelho);
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    /* HERO */
-
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 55px 5%;
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--dourado);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      color: var(--vermelho-escuro);
-      font-size: clamp(40px, 5vw, 64px);
-      line-height: 1.08;
-      margin-bottom: 20px;
-    }
-
-    .hero-text {
-      color: var(--cinza);
-      font-size: 18px;
-      max-width: 550px;
-    }
-
-    .price {
-      margin: 27px 0 20px;
-    }
-
-    .price small {
-      display: block;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: var(--cinza);
-    }
-
-    .price strong {
-      color: var(--vermelho);
-      font-size: 36px;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--vermelho);
-      color: white;
-      padding: 16px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-      box-shadow: 0 12px 25px rgba(143,36,48,0.20);
-      transition: 0.2s;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      background: var(--vermelho-escuro);
-    }
-
-    .small-text {
-      font-size: 11px;
-      color: #8b8179;
-      margin-top: 10px;
-    }
-
-    .hero-image {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(60,38,25,0.18);
-    }
-
-    .hero-image img {
-      width: 100%;
-      display: block;
-    }
-
-    /* CONFIANÇA */
-
-    .trust {
-      max-width: 1050px;
-      margin: 0 auto 50px;
-      padding: 16px 20px;
-      border-top: 1px solid var(--linha);
-      border-bottom: 1px solid var(--linha);
-      display: flex;
-      justify-content: space-around;
-      gap: 15px;
-      color: #6c625a;
-      font-size: 13px;
-      text-align: center;
-    }
-
-    .trust span {
-      color: var(--vermelho);
-      font-weight: bold;
-    }
-
-    /* SEÇÕES */
-
-    section {
-      padding: 85px 5%;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .center {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
-    }
-
-    h2 {
-      font-family: Georgia, serif;
-      color: var(--vermelho-escuro);
-      font-size: clamp(30px, 4vw, 45px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    /* PROBLEMA */
-
-    .problem {
-      background: white;
-    }
-
-    .problem p {
-      color: var(--cinza);
-      font-size: 17px;
-      margin-bottom: 15px;
-    }
-
-    /* CARDS */
-
-    .features {
-      background: var(--creme);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 17px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--linha);
-      border-radius: 16px;
-      padding: 28px 22px;
-      box-shadow: 0 8px 25px rgba(63,43,30,0.05);
-    }
-
-    .icon {
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      background: #f5e8d4;
-      color: var(--vermelho);
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-      margin-bottom: 17px;
-    }
-
-    .card h3 {
-      font-family: Georgia, serif;
-      color: var(--vermelho-escuro);
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--cinza);
-      font-size: 14px;
-    }
-
-    /* PRÉVIA */
-
-    .preview {
-      background: #f2eadf;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .preview p {
-      color: var(--cinza);
-      font-size: 16px;
-    }
-
-    .checklist {
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .checklist li {
-      padding: 9px 0;
-      border-bottom: 1px dashed #d9ccb9;
-      color: #514840;
-    }
-
-    .checklist li::before {
-      content: "✓";
-      color: var(--vermelho);
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .mockup {
-      display: flex;
-      justify-content: center;
-    }
-
-    .paper {
-      width: 290px;
-      min-height: 370px;
-      background: white;
-      padding: 32px;
-      box-shadow: 0 20px 45px rgba(70,45,30,0.18);
-      transform: rotate(2deg);
-      position: relative;
-    }
-
-    .paper::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid #d9c7aa;
-    }
-
-    .paper small {
-      color: var(--dourado);
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .paper h3 {
-      font-family: Georgia, serif;
-      color: var(--vermelho);
-      font-size: 38px;
-      margin: 25px 0 10px;
-    }
-
-    .paper p {
-      font-size: 13px;
-      color: var(--cinza);
-    }
-
-    .paper-price {
-      margin-top: 25px;
-      font-weight: bold;
-      color: var(--vermelho);
-    }
-
-    /* BÔNUS */
-
-    .bonus {
-      background: white;
-    }
-
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .bonus-card {
-      border: 1px solid var(--linha);
-      border-radius: 16px;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .bonus-card .emoji {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .bonus-card h3 {
-      font-family: Georgia, serif;
-      color: var(--vermelho-escuro);
-      margin-bottom: 8px;
-    }
-
-    .bonus-card p {
-      color: var(--cinza);
-      font-size: 14px;
-    }
-
-    /* OFERTA */
-
-    .offer {
-      background: linear-gradient(180deg, #f2eadf, #fbf7ef);
-    }
-
-    .offer-box {
-      max-width: 560px;
-      margin: auto;
-      background: white;
-      border: 1px solid #e5d7c5;
-      border-radius: 22px;
-      padding: 43px;
-      text-align: center;
-      box-shadow: 0 25px 70px rgba(68,43,28,0.12);
-    }
-
-    .offer-box h2 {
-      margin-bottom: 10px;
-    }
-
-    .offer-sub {
-      color: var(--cinza);
-      margin-bottom: 25px;
-    }
-
-    .big-price {
-      padding: 15px 0;
-    }
-
-    .big-price small {
-      display: block;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      color: var(--cinza);
-    }
-
-    .big-price strong {
-      font-size: 50px;
-      color: var(--vermelho);
-    }
-
-    .offer-list {
-      list-style: none;
-      text-align: left;
-      margin: 10px 0 25px;
-    }
-
-    .offer-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee6dc;
-    }
-
-    .offer-button {
-      width: 100%;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* FAQ */
-
-    .faq {
-      background: white;
-    }
-
-    details {
-      border-bottom: 1px solid var(--linha);
-      padding: 18px 0;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: #443a34;
-    }
-
-    details p {
-      color: var(--cinza);
-      padding-top: 10px;
-    }
-
-    /* FINAL */
-
-    .final {
-      padding: 85px 5%;
-      text-align: center;
-      background: #6f1e28;
-      color: white;
-    }
-
-    .final h2 {
-      color: white;
-      max-width: 720px;
-      margin: 0 auto 15px;
-    }
-
-    .final p {
-      color: #f0ded2;
-      margin-bottom: 22px;
-    }
-
-    .final .eyebrow {
-      color: #e4bd72;
-    }
-
-    .final .cta {
-      background: white;
-      color: var(--vermelho);
-    }
-
-    /* RODAPÉ */
-
-    footer {
-      padding: 25px 5%;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: #8a7d73;
-      font-size: 11px;
-      background: white;
-    }
-
-    /* CELULAR */
-
-    @media (max-width: 850px) {
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 35px;
-      }
-
-      .hero-image {
-        max-width: 520px;
-        margin: auto;
-      }
-
-      .trust {
-        flex-direction: column;
-      }
-
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .preview-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .bonus-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-
-      .topbar {
-        padding: 0 5%;
-      }
-
-      .top-button {
-        display: none;
-      }
-
-      .hero {
-        padding: 32px 5% 25px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero-text {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 62px 5%;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .offer-box {
-        padding: 30px 20px;
-      }
-
-      .big-price strong {
-        font-size: 43px;
-      }
-
-      footer {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <meta name="description" content="Aprenda a montar uma mesa de Natal bonita, acolhedora e possível de fazer em casa, mesmo gastando pouco.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- TOPO -->
+<header class="topbar">
+  <div class="logo">Mesa de Natal <span>Encantadora</span></div>
+  <a href="#oferta" class="top-button">Quero meu guia</a>
+</header>
 
-  <header class="topbar">
+<main>
 
-    <div class="logo">
-      Mesa de Natal <span>Encantadora</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <span class="eyebrow">GUIA DIGITAL • ACESSO IMEDIATO</span>
+      <h1>Uma mesa bonita não precisa ser complicada.</h1>
+      <p class="hero-text">Aprenda a montar uma mesa de Natal acolhedora, organizada e bonita usando o que você já tem em casa e comprando apenas o necessário.</p>
+      <div class="price">
+        <small>POR APENAS</small>
+        <strong>R$ 19,90</strong>
+      </div>
+      <a href="#oferta" class="cta">Quero preparar minha mesa →</a>
+      <p class="small-text">Produto digital • PDF • Pagamento por Pix</p>
     </div>
-
-    <a href="#oferta" class="top-button">
-      Quero meu guia
-    </a>
-
-  </header>
-
-
-  <main>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div>
-
-        <span class="eyebrow">
-          GUIA DIGITAL • ACESSO IMEDIATO
-        </span>
-
-        <h1>
-          Uma mesa bonita não precisa ser complicada.
-        </h1>
-
-        <p class="hero-text">
-          Aprenda a montar uma mesa de Natal acolhedora,
-          organizada e bonita usando o que você já tem em casa
-          e comprando apenas o necessário.
-        </p>
-
-        <div class="price">
-
-          <small>
-            POR APENAS
-          </small>
-
-          <strong>
-            R$ 19,90
-          </strong>
-
-        </div>
-
-        <a href="#oferta" class="cta">
-          Quero preparar minha mesa →
-        </a>
-
-        <p class="small-text">
-          Produto digital • PDF • Acesso após a confirmação do pagamento
-        </p>
-
-      </div>
-
-
-      <div class="hero-image">
-
-        <!--
-        COLOQUE A IMAGEM DO HERO NA MESMA PASTA DO INDEX
-        COM O NOME:
-
-        hero.png
-        -->
-
-        <img
-          src="85D8675E-9012-418F-9BD1-BD3DD8E58E81.png"
-          alt="Mesa de Natal decorada">
-          
-      </div>
-
-    </section>
-
-
-    <!-- CONFIANÇA -->
-
-    <div class="trust">
-
-      <div>
-        <span>✓</span>
-        Feito para iniciantes
-      </div>
-
-      <div>
-        <span>✓</span>
-        Ideias simples de adaptar
-      </div>
-
-      <div>
-        <span>✓</span>
-        Guia em PDF
-      </div>
-
+    <div class="hero-image">
+      <!-- Imagem 85D8675E-9012-418F-9BD1-BD3DD8E58E81.png na mesma pasta deste arquivo -->
+      <img src="85D8675E-9012-418F-9BD1-BD3DD8E58E81.png" alt="Mesa de Natal decorada">
     </div>
+  </section>
 
+  <!-- CONFIANÇA -->
+  <div class="trust">
+    <div><span>✓</span> Feito para iniciantes</div>
+    <div><span>✓</span> Ideias simples de adaptar</div>
+    <div><span>✓</span> Guia em PDF</div>
+  </div>
 
-    <!-- PROBLEMA -->
+  <!-- PROBLEMA -->
+  <section class="problem">
+    <div class="container">
+      <span class="eyebrow">SE VOCÊ JÁ PASSOU POR ISSO…</span>
+      <h2>“Eu queria deixar a mesa bonita, mas não sei por onde começar.”</h2>
+      <p>Entre escolher as cores, organizar pratos e talheres, pensar no centro da mesa e decidir o que realmente vale comprar, é fácil transformar uma coisa gostosa em uma tarefa cansativa.</p>
+      <p>O <strong>Mesa de Natal Encantadora</strong> foi pensado para simplificar isso: você escolhe uma proposta, separa o que já tem e segue um passo a passo.</p>
+    </div>
+  </section>
 
-    <section class="problem">
-
-      <div class="container">
-
-        <span class="eyebrow">
-          SE VOCÊ JÁ PASSOU POR ISSO…
-        </span>
-
-        <h2>
-          “Eu queria deixar a mesa bonita,
-          mas não sei por onde começar.”
-        </h2>
-
-        <p>
-          Entre escolher as cores, organizar pratos e talheres,
-          pensar no centro da mesa e decidir o que realmente vale
-          comprar, é fácil transformar uma coisa gostosa em uma
-          tarefa cansativa.
-        </p>
-
-        <p>
-          O <strong>Mesa de Natal Encantadora</strong> foi pensado
-          para simplificar isso: você escolhe uma proposta,
-          separa o que já tem e segue um passo a passo.
-        </p>
-
+  <!-- BENEFÍCIOS -->
+  <section>
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">O QUE VOCÊ VAI ENCONTRAR</span>
+        <h2>Um guia para sair da ideia e chegar à mesa pronta.</h2>
       </div>
-
-    </section>
-
-
-    <!-- BENEFÍCIOS -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="center">
-
-          <span class="eyebrow">
-            O QUE VOCÊ VAI ENCONTRAR
-          </span>
-
-          <h2>
-            Um guia para sair da ideia
-            e chegar à mesa pronta.
-          </h2>
-
+      <div class="cards">
+        <div class="card">
+          <div class="icon">✦</div>
+          <h3>15 ideias de mesas</h3>
+          <p>Inspirações para estilos diferentes, sem precisar copiar tudo exatamente.</p>
         </div>
-
-
-        <div class="cards">
-
-          <div class="card">
-
-            <div class="icon">
-              ✦
-            </div>
-
-            <h3>
-              15 ideias de mesas
-            </h3>
-
-            <p>
-              Inspirações para estilos diferentes,
-              sem precisar copiar tudo exatamente.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="icon">
-              ✓
-            </div>
-
-            <h3>
-              Passo a passo
-            </h3>
-
-            <p>
-              Da base da mesa ao centro da decoração,
-              com orientações simples.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="icon">
-              □
-            </div>
-
-            <h3>
-              Lista de materiais
-            </h3>
-
-            <p>
-              Confira o que você já tem e o que
-              realmente vale comprar.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="icon">
-              ♡
-            </div>
-
-            <h3>
-              Checklist da ceia
-            </h3>
-
-            <p>
-              Uma lista prática para não esquecer
-              os pequenos detalhes.
-            </p>
-
-          </div>
-
+        <div class="card">
+          <div class="icon">✓</div>
+          <h3>Passo a passo</h3>
+          <p>Da base da mesa ao centro da decoração, com orientações simples.</p>
         </div>
-
+        <div class="card">
+          <div class="icon">□</div>
+          <h3>Lista de materiais</h3>
+          <p>Confira o que você já tem e o que realmente vale comprar.</p>
+        </div>
+        <div class="card">
+          <div class="icon">♡</div>
+          <h3>Checklist da ceia</h3>
+          <p>Uma lista prática para não esquecer os pequenos detalhes.</p>
+        </div>
       </div>
-
-    </section>
-
-
-    <!-- PRÉVIA -->
-
-    <section class="preview">
-
-      <div class="container preview-grid">
-
-        <div>
-
-          <span class="eyebrow">
-            DENTRO DO GUIA
-          </span>
-
-          <h2>
-            Você não precisa comprar
-            uma mesa nova.
-          </h2>
-
-          <p>
-            A proposta é usar a decoração como complemento.
-            O guia mostra como escolher uma paleta, organizar
-            os lugares e criar um centro bonito sem deixar
-            a mesa apertada.
-          </p>
-
-
-          <ul class="checklist">
-
-            <li>
-              Escolha de cores e estilos
-            </li>
-
-            <li>
-              Organização de pratos, talheres e copos
-            </li>
-
-            <li>
-              Centro de mesa simples
-            </li>
-
-            <li>
-              Três propostas prontas para adaptar
-            </li>
-
-            <li>
-              Plano rápido para o dia da ceia
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <div class="mockup">
-
-          <div class="paper">
-
-            <small>
-              MESA DE NATAL
-            </small>
-
-            <h3>
-              Encantadora
-            </h3>
-
-            <p>
-              Guia prático para uma mesa bonita,
-              acolhedora e possível de fazer em casa.
-            </p>
-
-            <div class="paper-price">
-              R$ 19,90
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- BÔNUS -->
-
-    <section class="bonus">
-
-      <div class="container">
-
-        <div class="center">
-
-          <span class="eyebrow">
-            E AINDA TEM
-          </span>
-
-          <h2>
-            3 bônus para facilitar
-            sua preparação.
-          </h2>
-
-        </div>
-
-
-        <div class="bonus-grid">
-
-          <div class="bonus-card">
-
-            <div class="emoji">
-              🎁
-            </div>
-
-            <h3>
-              Cartões para a mesa
-            </h3>
-
-            <p>
-              Modelos simples para imprimir e colocar
-              junto aos lugares.
-            </p>
-
-          </div>
-
-
-          <div class="bonus-card">
-
-            <div class="emoji">
-              📋
-            </div>
-
-            <h3>
-              Checklist da montagem
-            </h3>
-
-            <p>
-              Uma lista para conferir tudo
-              antes da ceia.
-            </p>
-
-          </div>
-
-
-          <div class="bonus-card">
-
-            <div class="emoji">
-              ✨
-            </div>
-
-            <h3>
-              Mini plano de decoração
-            </h3>
-
-            <p>
-              Espaço para definir cores,
-              compras e o detalhe especial.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- OFERTA -->
-
-    <section class="offer" id="oferta">
-
-      <div class="offer-box">
-
-        <span class="eyebrow">
-          OFERTA ESPECIAL
-        </span>
-
-        <h2>
-          Mesa de Natal Encantadora
-        </h2>
-
-        <p class="offer-sub">
-          Seu guia prático para preparar
-          uma mesa especial sem complicar.
-        </p>
-
-
-        <div class="big-price">
-
-          <small>
-            ACESSO AO GUIA POR
-          </small>
-
-          <strong>
-            R$ 19,90
-          </strong>
-
-        </div>
-
-
-        <ul class="offer-list">
-
-          <li>
-            ✓ Guia completo em PDF
-          </li>
-
-          <li>
-            ✓ 15 ideias de mesas
-          </li>
-
-          <li>
-            ✓ Passo a passo de montagem
-          </li>
-
-          <li>
-            ✓ Lista de materiais
-          </li>
-
-          <li>
-            ✓ Checklist da ceia
-          </li>
-
-          <li>
-            ✓ Bônus para imprimir
-          </li>
-
+    </div>
+  </section>
+
+  <!-- PRÉVIA -->
+  <section class="preview">
+    <div class="container preview-grid">
+      <div>
+        <span class="eyebrow">DENTRO DO GUIA</span>
+        <h2>Você não precisa comprar uma mesa nova.</h2>
+        <p>A proposta é usar a decoração como complemento. O guia mostra como escolher uma paleta, organizar os lugares e criar um centro bonito sem deixar a mesa apertada.</p>
+        <ul class="checklist">
+          <li>Escolha de cores e estilos</li>
+          <li>Organização de pratos, talheres e copos</li>
+          <li>Centro de mesa simples</li>
+          <li>Três propostas prontas para adaptar</li>
+          <li>Plano rápido para o dia da ceia</li>
         </ul>
+      </div>
+      <div class="mockup">
+        <div class="paper">
+          <small>MESA DE NATAL</small>
+          <h3>Encantadora</h3>
+          <p>Guia prático para uma mesa bonita, acolhedora e possível de fazer em casa.</p>
+          <div class="paper-price">R$ 19,90</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- BÔNUS -->
+  <section class="bonus">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">E AINDA TEM</span>
+        <h2>3 bônus para facilitar sua preparação.</h2>
+      </div>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <div class="emoji">🎁</div>
+          <h3>Cartões para a mesa</h3>
+          <p>Modelos simples para imprimir e colocar junto aos lugares.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="emoji">📋</div>
+          <h3>Checklist da montagem</h3>
+          <p>Uma lista para conferir tudo antes da ceia.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="emoji">✨</div>
+          <h3>Mini plano de decoração</h3>
+          <p>Espaço para definir cores, compras e o detalhe especial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!--
-        IMPORTANTE:
+  <!-- OFERTA + PIX -->
+  <section class="offer" id="oferta">
+    <div class="offer-box">
+      <span class="eyebrow">OFERTA ESPECIAL</span>
+      <h2>Mesa de Natal Encantadora</h2>
+      <p class="offer-sub">Seu guia prático para preparar uma mesa especial sem complicar.</p>
 
-        TROQUE O "#" ABAIXO PELO LINK DO SEU CHECKOUT.
+      <div class="big-price">
+        <small>ACESSO AO GUIA POR</small>
+        <strong>R$ 19,90</strong>
+      </div>
 
-        EXEMPLO:
+      <ul class="offer-list">
+        <li>✓ Guia completo em PDF</li>
+        <li>✓ 15 ideias de mesas</li>
+        <li>✓ Passo a passo de montagem</li>
+        <li>✓ Lista de materiais</li>
+        <li>✓ Checklist da ceia</li>
+        <li>✓ Bônus para imprimir</li>
+      </ul>
 
-        href="https://seu-checkout.com/..."
-        -->
+      <div class="pix-box" id="pix">
+        <p class="pix-title">Pague com Pix</p>
+        <p class="pix-sub">Valor: <strong>R$ 19,90</strong> · Recebedor: ANA LAURA</p>
 
-        <a
-          href="#"
-          class="cta offer-button"
-          onclick="alert('O checkout ainda não foi configurado.'); return false;"
-        >
-          Quero meu guia por R$ 19,90
+        <ol class="pix-steps">
+          <li>Toque em <strong>Copiar código Pix</strong></li>
+          <li>No app do seu banco, escolha <strong>Pix → Pix Copia e Cola</strong></li>
+          <li>Pague e envie o comprovante pelo WhatsApp</li>
+        </ol>
+
+        <textarea id="pixCode" class="pix-code" readonly rows="4">00020101021126360014BR.GOV.BCB.PIX0114+5517997685915520400005303986540519.905802BR5909ANA LAURA6006BRASIL62070503***6304B651</textarea>
+
+        <button type="button" class="cta offer-button" id="btnCopiar">Copiar código Pix</button>
+
+        <a class="cta offer-button pix-whats" target="_blank" rel="noopener"
+           href="https://wa.me/5517997685915?text=Ol%C3%A1!%20Acabei%20de%20pagar%20o%20guia%20Mesa%20de%20Natal%20Encantadora%20(R%24%2019%2C90).%20Segue%20o%20comprovante.">
+          Enviar comprovante no WhatsApp
         </a>
 
-
-        <p class="small-text">
-          Produto digital • Você recebe o material
-          após a confirmação do pagamento.
-        </p>
-
+        <p class="small-text">Após conferir o pagamento, você recebe o PDF no WhatsApp.</p>
       </div>
+    </div>
+  </section>
 
-    </section>
-
-
-    <!-- FAQ -->
-
-    <section class="faq">
-
-      <div class="container">
-
-        <div class="center">
-
-          <span class="eyebrow">
-            DÚVIDAS
-          </span>
-
-          <h2>
-            Perguntas frequentes
-          </h2>
-
-        </div>
-
-
-        <details>
-
-          <summary>
-            O produto é físico?
-          </summary>
-
-          <p>
-            Não. É um produto digital em PDF,
-            para você acessar pelo celular ou computador.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Preciso entender de decoração?
-          </summary>
-
-          <p>
-            Não. O material foi pensado para quem
-            quer uma orientação simples para começar.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Preciso comprar muitos materiais?
-          </summary>
-
-          <p>
-            Não. A proposta é começar pelo que você já tem
-            e comprar somente o que fizer sentido para
-            completar a mesa.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Posso usar pelo celular?
-          </summary>
-
-          <p>
-            Sim. O PDF pode ser aberto no celular,
-            tablet ou computador.
-          </p>
-
-        </details>
-
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">DÚVIDAS</span>
+        <h2>Perguntas frequentes</h2>
       </div>
+      <details>
+        <summary>O produto é físico?</summary>
+        <p>Não. É um produto digital em PDF, para você acessar pelo celular ou computador.</p>
+      </details>
+      <details>
+        <summary>Como recebo o guia?</summary>
+        <p>Depois de pagar o Pix, envie o comprovante pelo WhatsApp. Assim que o pagamento for conferido, você recebe o PDF.</p>
+      </details>
+      <details>
+        <summary>Preciso entender de decoração?</summary>
+        <p>Não. O material foi pensado para quem quer uma orientação simples para começar.</p>
+      </details>
+      <details>
+        <summary>Preciso comprar muitos materiais?</summary>
+        <p>Não. A proposta é começar pelo que você já tem e comprar somente o que fizer sentido para completar a mesa.</p>
+      </details>
+      <details>
+        <summary>Posso usar pelo celular?</summary>
+        <p>Sim. O PDF pode ser aberto no celular, tablet ou computador.</p>
+      </details>
+    </div>
+  </section>
 
-    </section>
+  <!-- CTA FINAL -->
+  <section class="final">
+    <span class="eyebrow">NATAL É SOBRE ESTAR JUNTO</span>
+    <h2>Prepare uma mesa bonita para receber quem você ama.</h2>
+    <p>Comece com o que você já tem. O resto são detalhes.</p>
+    <a href="#oferta" class="cta">Quero meu guia →</a>
+  </section>
 
+</main>
 
-    <!-- CTA FINAL -->
+<footer>
+  <p>© 2026 Mesa de Natal Encantadora</p>
+  <p>Produto digital independente.</p>
+</footer>
 
-    <section class="final">
-
-      <span class="eyebrow">
-        NATAL É SOBRE ESTAR JUNTO
-      </span>
-
-      <h2>
-        Prepare uma mesa bonita
-        para receber quem você ama.
-      </h2>
-
-      <p>
-        Comece com o que você já tem.
-        O resto são detalhes.
-      </p>
-
-      <a href="#oferta" class="cta">
-        Quero meu guia →
-      </a>
-
-    </section>
-
-  </main>
-
-
-  <!-- RODAPÉ -->
-
-  <footer>
-
-    <p>
-      © 2026 Mesa de Natal Encantadora
-    </p>
-
-    <p>
-      Produto digital independente.
-    </p>
-
-  </footer>
+<script>
+  document.getElementById('btnCopiar').addEventListener('click', function () {
+    var campo = document.getElementById('pixCode');
+    var botao = this;
+    function ok() {
+      botao.textContent = 'Código copiado ✓';
+      setTimeout(function () { botao.textContent = 'Copiar código Pix'; }, 2500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(campo.value).then(ok);
+    } else {
+      campo.select();
+      document.execCommand('copy');
+      ok();
+    }
+  });
+</script>
 
 </body>
 </html>
